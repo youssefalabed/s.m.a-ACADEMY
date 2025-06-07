@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>S.M.A Academy</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      direction: ltr;
+    }
+
+    #academy-image {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-bottom: 4px solid red;
+    }
+
+    #language-select {
+      margin-top: 20px;
+      font-size: 16px;
+      padding: 5px;
+    }
+
+    h1 {
+      color: red;
+      margin-top: 20px;
+    }
+
+    .info-box {
+      background-color: #ffffff;
+      border: 2px solid red;
+      padding: 20px;
+      margin: 30px auto;
+      width: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .players-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px auto;
+      width: 90%;
+    }
+
+    .player-box {
+      background: linear-gradient(to bottom, black, red);
+      color: white;
+      padding: 15px 10px;
+      width: 22%;
+      min-width: 150px;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- صورة الأكاديمية -->
+  <img src="academy.html.jpg" width="500" height="500"><br><br>
+
+  <!-- اختيار اللغة -->
+  <select id="language-select">
+    <option value="en">English 🇬🇧</option>
+    <option value="ar">العربية 🇸🇦</option>
+    <option value="es">Español 🇪🇸</option>
+    <option value="de">Deutsch 🇩🇪</option>
+  </select>
+
+  <!-- عنوان ترحيبي -->
+  <h1 id="welcome-text">Welcome to S.M.A Academy</h1>
+
+  <!-- معلومات الأكاديمية -->
+  <div class="info-box">
+    <h2 id="info-title">Information about the Academy</h2>
+    <p id="info-description">
+      S.M.A Academy was founded in 2008. It includes professional players born from 2006 to 2018. It is located in Lebanon and is one of the best and strongest teams in Lebanon
+	  and in this Academy we have the most important category of the team is 2010 A
+	  
+    </p>
+  </div>
+
+  <!-- اللاعبين -->
+  <div class="players-container">
+    <div class="player-box">ALI MOHSEN 12</div>
+    <div class="player-box">YOUSSEF AL ABED 4</div>
+    <div class="player-box">HSSEIN ABBAS 7</div>
+    <div class="player-box">ZEIN AL ABEDIN 7</div>
+    <div class="player-box">RAMI ALEME 6</div>
+    <div class="player-box">MHMD HAMOUDI 10</div>
+    <div class="player-box">MOHAMAD DAHER 66</div>
+    <div class="player-box">MOHAMAD NASER LDINE 5</div>
+    <div class="player-box">YEHYA BAYDOUN 30</div>
+    <div class="player-box">ALI FARES 1</div>
+    <div class="player-box">HSEIN WEHBE 16</div>
+    <div class="player-box">MOUSSA MOHSEN 11</div>
+  </div>
+
+  <!-- سكريبت تغيير اللغة -->
+  <script>
+    const translations = {
+      en: {
+        direction: "ltr",
+        welcome: "Welcome to S.M.A Academy",
+        title: "Information about the Academy",
+        desc: "S.M.A Academy was founded in 2008. It includes professional players born from 2006 to 2018. It is located in Lebanon and is one of the best and strongest teams in Lebanon and in this Academy we have the most important category of the team is 2010 A."
+			   },
+      ar: {
+        direction: "rtl",
+        welcome: "مرحبًا بكم في أكاديمية S.M.A",
+        title: "معلومات عن الأكاديمية",
+        desc: " تم تاسيس اكاديمية S.M.A عام ٢٠٠٨وتضم لاعبين من مواليد ٢٠٠٦ الى ٢٠١٨ توجد الاكاديمية في لبنان وتعد من اجمل واقوى الفرق البنانية واهم فئة فيها هي ٢٠١٠ ا  ."
+      },			
+      es: {
+        direction: "ltr",
+        welcome: "Bienvenido a la Academia S.M.A",
+        title: "Información sobre la Academia",
+        desc: "La Academia S.M.A fue fundada en 2008. Incluye jugadores profesionales nacidos entre 2006 y 2018. Está ubicada en Líbano y es uno de los mejores y más fuertes equipos del paísEn esta academia tenemos la categoría más importante del equipo que es la categoría A 2010." 
+             
+	      },
+      de: {
+        direction: "ltr",
+        welcome: "Willkommen in der S.M.A Akademie",
+        title: "Informationen über die Akademie",
+        desc: "Die S.M.A Akademie wurde 2008 gegründet. Sie umfasst professionelle Spieler, die zwischen 2006 und 2018 geboren wurden. Sie befindet sich im Libanon und gehört zu den besten und stärksten Teams dort und in dieser Akademie haben wir die wichtigste Kategorie des Teams ist 2010 A."
+      }
+    };
+
+    const select = document.getElementById("language-select");
+    const welcomeText = document.getElementById("welcome-text");
+    const infoTitle = document.getElementById("info-title");
+    const infoDesc = document.getElementById("info-description");
+
+    select.addEventListener("change", function () {
+      const lang = select.value;
+      document.body.style.direction = translations[lang].direction;
+      welcomeText.textContent = translations[lang].welcome;
+      infoTitle.textContent = translations[lang].title;
+      infoDesc.textContent = translations[lang].desc;
+    });
+  </script>
+
+</body>
+</html>
